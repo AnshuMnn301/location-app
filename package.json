@@ -6,7 +6,7 @@
     "android": "react-native run-android --no-jetifier",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/react-native": "^12.0.1",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.69.3",
@@ -33,12 +34,22 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
     "metro-react-native-babel-preset": "^0.70.3",
     "react-test-renderer": "18.0.0",
     "typescript": "^4.4.4"
   },
   "jest": {
     "preset": "react-native",
+    "testEnvironment": "jsdom",
+    "automock": false,
+    "transformIgnorePatterns": [
+      "node_modules/(?!@react-native|react-native|@react-navigation)"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.ts"
+    ],
+    "collectCoverageFrom": [],
     "moduleFileExtensions": [
       "ts",
       "tsx",

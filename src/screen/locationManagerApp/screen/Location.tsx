@@ -6,6 +6,7 @@ import {
   Text,
   SectionList,
   ToastAndroid,
+  Platform
 } from 'react-native';
 import {
   LocationType,
@@ -70,7 +71,7 @@ export default function Location() {
             else GeoLocation.stopObserving();
           },
           error => {
-            console.error(error);
+            ToastAndroid.show('Location not captured properly.Try again!!!', ToastAndroid.SHORT);
           },
           {
             enableHighAccuracy: false,
@@ -84,7 +85,9 @@ export default function Location() {
         ToastAndroid.show('Error in getting permission', ToastAndroid.SHORT);
       }
     }
-    getLocationFuncStart();
+    if(Platform.OS === 'android') {
+      getLocationFuncStart()
+    }
     return () => {
       if (watchId !== null) GeoLocation.clearWatch(watchId);
     };
@@ -120,8 +123,9 @@ export default function Location() {
   return (
     <View style={[{flex: 1}, styles.marV]}>
       <SectionList
+        testID='location-list'
         sections={places.data}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={item => item?.id?.toString()}
         renderItem={props => <Item {...props} deleteItem={handleDeleteItem} />}
         renderSectionHeader={props => (
           <Text style={[styles.heading, styles.marH]}>

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "lightgray",
+        "borderRadius": 10,
+        "flexDirection": "row",
+      },
+      Object {
+        "margin": "2.5%",
+      },
+      Object {
+        "padding": "2.5%",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "width": "80%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 18,
+        }
+      }
+    >
+      Turkapalle, Turkapalle (M) mandal, Yadadri Bhuvanagiri, Telangana, India
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "marginTop": 5,
+          },
+          Object {
+            "color": "black",
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      27/4/2023, 4:56:33 pm
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "width": "20%",
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          remove
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
